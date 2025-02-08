@@ -63,7 +63,6 @@ def calculate_left_scores(combo):
     for i, value in enumerate(combo):
         possible_values = max_values[i] - max(min_values[i], combo[i - 1] + 1 if i > 0 else min_values[i]) + 1
         left_scores.append(1 / possible_values)
-
     return left_scores
 
 # Calcular probabilidades de derecha a izquierda
