@@ -8,3 +8,5 @@ __pycache__/
 temp/*.*
 
 postgres_data
+
+gn_cahe_v3.json
