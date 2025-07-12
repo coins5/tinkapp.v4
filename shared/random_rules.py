@@ -30,7 +30,21 @@ class RandomRules (InnerRandomRules):
   # Utilizando una tabla precalculada para mayor eficiencia
   def is_prime(cls, num: int):
     return num in cls.PRIME_NUMBERS
-
+  
+  def prime_counter (cls, combo: tuple[int]) -> int:
+    return sum(1 for num in combo if cls.is_prime(num))
+  
+  def evens_counter (cls, combo: tuple[int]) -> int:
+    return sum(1 for num in combo if num % 2 == 0)
+  
+  def odds_counter (cls, combo: tuple[int]) -> int:
+    return sum(1 for num in combo if num % 2 == 1)
+  
+  def jumps (cls, combo: tuple[int]) -> List[int]:
+    return [combo[i + 1] - combo[i] for i in range(len(combo) - 1)]
+  
+  
+  
   # Función para determinar si una combinación es "rara"
   def is_rare_combination(cls, combo: tuple[int], comboid: str) -> tuple[bool, int]:
     reasons = 0
